@@ -22,7 +22,6 @@ int partition(int *array, int low_index, int high_index, size_t size)
 			{
 				temp = array[i];
 				array[i] = array[j];
-				array[j] = temp;
 				print_array(array, size);
 			}
 		}
@@ -35,6 +34,24 @@ int partition(int *array, int low_index, int high_index, size_t size)
 		print_array(array, size);
 	}
 	return (i + 1);
+}
+/**
+ * quickSort - function to sort an array using the quick sort algorithm
+ * @array: array to sort
+ * @low_index: lower index of split array
+ * @high_index: higher index of split array
+ * @size: size of array
+ * Return: none
+*/
+void quickSort(int *array, int low_index, int high_index, size_t size)
+{
+	int pivot;
+
+	if (low_index < high_index)
+	{
+		pivot = partition(array, low_index, high_index, size);
+		quickSort(array, pivot + 1, high_index, size);
+	}
 }
 
 /**
