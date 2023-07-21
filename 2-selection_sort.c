@@ -20,7 +20,6 @@ void selection_sort(int *array, size_t size)
 		{
 		temp = array[smallest];
 		array[smallest] = array[i];
-		array[i] = temp;
 		print_array(array, size);
 		}
 	}

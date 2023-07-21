@@ -55,21 +55,3 @@ void quickSort(int *array, int low_index, int high_index, size_t size)
 		quickSort(array, pivot + 1, high_index, size);
 	}
 }
-
-/**
- * quick_sort - function to parse the array and pass it\
- * to another sorting function
- * @array: array to be sorted
- * @size: size of array
- * Return: none
-*/
-void quick_sort(int *array, size_t size)
-{
-	int low_index, high_index;
-
-	low_index = 0;
-	high_index = size - 1;
-	if (size < 2 || array == NULL)
-		return;
-	quickSort(array, low_index, high_index, size);
-}
